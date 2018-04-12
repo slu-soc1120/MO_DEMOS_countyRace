@@ -10,9 +10,9 @@
 This repository contains a map image of counties in Missouri, colored by their 2016 estimated African American population as a percentage of the total population. These data were obtained from the U.S. Census Bureau's 2016 5-year American Community Survey estimates. I use this map in two units - teaching about race and also about low birth weight (part of the gender section of the course).
 
 ### Preview
-<p> </p>
+
 ![preview](2016/results/raceMap16-trans.png)
-<p> </p>
+
 
 ## About SOC 1120: Introduction to Sociology - Diversity and Health Emphasis
 ### Course Description
