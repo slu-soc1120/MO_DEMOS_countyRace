@@ -40,20 +40,16 @@ moRace <- get_acs(geography = "county",  state = "MO", output = "wide", table = 
 ### subset columns and calculate estimate
 moRace %>%
   mutate(pctBlack = (B02001_003E/B02001_001E)*100) %>%
-  select(GEOID, B02001_001E, B02001_003E, pctBlack) -> moRace
+  select(GEOID, pctBlack) %>%
+  cp_breaks(var = pctBlack, newvar = blackJenks, classes = 5, style = "jenks") -> moRace
 
 ### combine spatial and geometric data
 raceMap <- left_join(moCounties, moRace, by = "GEOID")
 
-
-jenks <- classIntervals(raceMap$pctBlack, n=5, style="jenks")
-race <- cut(raceMap$pctBlack, breaks = c(jenks$brks))
-
-
 ## base map
 base <- ggplot() + 
   geom_sf(data = mo, fill = "#ffffff", color = NA) + 
-  geom_sf(data = raceMap, mapping = aes(fill = race), color = NA) +
+  geom_sf(data = raceMap, mapping = aes(fill = blackJenks), color = NA) +
   geom_sf(data = mo, fill = NA, color = "#000000", size = .25) +
   scale_fill_brewer(palette = "BuPu", name = "Percent",
     labels = c("0.00 - 2.96", "2.97 - 8.23", "8.24 - 15.90", "15.91 - 27.00", "27.01 - 47.90")) +
