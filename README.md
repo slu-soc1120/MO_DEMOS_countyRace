@@ -14,6 +14,8 @@ This repository contains a map image of counties in Missouri, colored by their 2
 
 ![preview](2016/results/raceMap16-trans.png)
 
+### Citing These Images
+This repository is associated with a [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (or DOI). Please include the DOI when citing these images. You can find pre-formatted citations and a BibTeX entry, among other citation resources, on the associated [Zenodo release page](https://zenodo.org/record/1226408).
 
 ## About SOC 1120: Introduction to Sociology - Diversity and Health Emphasis
 ### Course Description
